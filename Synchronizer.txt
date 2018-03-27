@@ -1,0 +1,26 @@
+`timescale 1ns / 1ps
+
+module Synchronizer(
+	sypush,
+	push,
+	clk,
+	rst
+ 	);
+
+	output reg sypush;
+
+    	input push;
+    	input clk;
+    	input rs;
+
+	always @(posedge clk or posedge rst)
+	begin		
+	
+		if(rst)
+			sypush <= 0;
+		else
+			sypush <= push;
+		
+	end 
+
+endmodule

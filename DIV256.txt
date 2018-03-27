@@ -1,0 +1,36 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date:    08:36:05 03/06/2017 
+// Design Name: 
+// Module Name:    DIV256 
+// Project Name: 
+// Target Devices: 
+// Tool versions: 
+// Description: 
+//
+// Dependencies: 
+//
+// Revision: 
+// Revision 0.01 - File Created
+// Additional Comments: 
+//
+//////////////////////////////////////////////////////////////////////////////////
+module DIV256(clk, rst, slowen);
+	input	clk,
+          	rst;
+	output	slowen;
+
+	reg[7:0]counter;
+
+	assign slowen = &counter;
+
+	always @(posedge clk or posedge rst)
+		if (rst)	counter <= 0;
+		else		counter <= counter + 1;
+
+
+endmodule
+

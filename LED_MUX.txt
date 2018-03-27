@@ -1,0 +1,21 @@
+module LED_MUX(leds_ctrl, score, leds_out);
+
+	input [1:0]	leds_ctrl;
+	input [6:0]	score;
+
+	output reg[6:0]	leds_out;
+	
+	`define leds_all_on	3
+	`define leds_all_off	0
+	`define leds_score	2
+
+	always @(*)
+	begin
+		case(leds_ctrl)
+			`leds_all_on:	leds_out = 7'b1111111;
+			`leds_all_off:	leds_out = 7'b0000000;
+			`leds_score:	leds_out = score;
+		endcase
+	end
+
+endmodule

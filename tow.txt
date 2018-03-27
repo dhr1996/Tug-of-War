@@ -1,0 +1,33 @@
+module tow(
+	leds_out,
+	pbl,
+	pbr,
+	rst,
+	clk50
+	);
+	
+	output[6:0] leds_out;
+
+	input 	pbl;
+	input 	pbr;
+	input 	rst;
+	input 	clk;
+
+	wire 	slowen, 
+		rout, 
+		push, 
+		tie, 
+		right, 
+		sypush, 
+		clk25, 
+		clr, 
+		ready_clr, 
+		pbl_p, 
+		pbr_p, 
+		G, 
+		H, 
+		winrnd,
+		endrnd,
+		clear_score;
+	wire[1:0] leds_ctrl;
+	wire[6:0] score;
